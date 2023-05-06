@@ -185,7 +185,7 @@ def main():
         regrets_sum.append(np.mean(res["regrets"][-1]))
         del res
 
-    report = {"default": T - np.mean(pne_nums), "regret": np.mean(regrets_sum)}
+    report = {"default": np.mean(pne_nums), "regret": np.mean(regrets_sum)}
     print(report)
 
     if args.nni:

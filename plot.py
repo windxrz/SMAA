@@ -9,7 +9,7 @@ from matplotlib import rc
 
 rc("font", **{"family": "sans-serif", "sans-serif": ["Times New Roman"]})
 
-rc("text", usetex=True)
+# rc("text", usetex=True)
 
 matplotlib.use("Agg")
 matplotlib.rcParams["pdf.fonttype"] = 42
@@ -53,13 +53,13 @@ COLOR = {
 }
 MARKER = {
     "SelfishRobustMMAB": "^",
-    "TotalReward": "p",
-    "ExploreThenCommit": "s",
+    "TotalReward": "s",
+    "ExploreThenCommit": "p",
     "SMAA": "o",
 }
 
 COLOR_RELAXED = ["#4A0F0F", "#870300", "#D61010", "#E3784D", "#F6BDC0"]
-MARKER_RELAXED = ["^", "p", "s", "o", "+", "H", "P", "."]
+MARKER_RELAXED = ["^", "s", "p", "o", "+", "H", "P", "."]
 
 
 def setting_path(N, K, T, dis):
@@ -295,7 +295,7 @@ def plot_relaxed():
 def main():
     if not os.path.exists("figs"):
         os.mkdir("figs")
-    # plot_all()
+    plot_all()
     plot_relaxed()
 
 
