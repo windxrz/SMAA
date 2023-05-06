@@ -1,0 +1,27 @@
+search_space:
+  N:
+    _type: choice
+    _value: [ 8, 20 ]
+  
+  dis:
+    _type: choice
+    _value: [ "beta", "bernoulli" ]
+  
+  alpha:
+    _type: choice
+    _value: [ 100, 200, 500, 1000, 2000 ]
+
+
+trial_command: python main.py --nni --method TotalReward -T 500000 -K 10
+trial_code_directory: ..
+
+trial_concurrency: 10
+max_trial_number: 20
+
+tuner:
+  name: TPE
+  class_args:
+    optimize_mode: maximize
+
+training_service:
+  platform: local

@@ -1,0 +1,27 @@
+search_space:
+  N:
+    _type: choice
+    _value: [ 8 ]
+  
+  dis:
+    _type: choice
+    _value: [ "beta", "bernoulli" ]
+  
+  beta:
+    _type: choice
+    _value: [ 0.01, 0.02, 0.05, 0.1, 0.2, 0.5 ]
+
+
+trial_command: python main.py --nni --method SelfishRobustMMAB -T 500000 -K 10
+trial_code_directory: ..
+
+trial_concurrency: 10
+max_trial_number: 16
+
+tuner:
+  name: TPE
+  class_args:
+    optimize_mode: maximize
+
+training_service:
+  platform: local
