@@ -6,7 +6,6 @@ import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import rc
 
-
 # rc("font", **{"family": "sans-serif", "sans-serif": ["Times New Roman"]})
 
 # rc("text", usetex=True)
